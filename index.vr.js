@@ -11,16 +11,15 @@ export default class react_vr_app extends React.Component {
     return (
       <View>
         <Pano
-         source={asset('photo.jpg')}
-         style={{
-           transform: [{
-             rotateY: -20
-           }]
-         }}
-         onLoad={() => {
-          console.log('Loaded');
-         }}
-         />        
+         source={[
+           asset('right.png'),
+           asset('left.png'),
+           asset('up.png'),
+           asset('down.png'),
+           asset('back.jpg'),
+           asset('front.jpg'),
+         ]}
+        />        
       </View>
     );
   }
