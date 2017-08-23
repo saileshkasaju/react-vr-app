@@ -10,13 +10,20 @@ import {
   Sphere,
   Box,
   Cylinder,
-  Plane
+  Plane,
+  AmbientLight,
+  DirectionalLight,
+  SpotLight
 } from 'react-vr';
 
 export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
+        <AmbientLight
+          intensity={2}
+          style={{ color: 'brown' }}
+        />
         <Sphere
         lit
         style={{
@@ -59,12 +66,6 @@ export default class react_vr_app extends React.Component {
         }}
         dimWidth={4}
         dimHeight={4}
-        />
-        <PointLight
-          intensity={1}
-          style={{
-            transform: [{ translate: [0, 700, 700] }]
-          }}
         />
       </View>
     );
