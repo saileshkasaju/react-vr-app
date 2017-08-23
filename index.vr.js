@@ -20,13 +20,15 @@ export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <DirectionalLight
+        <PointLight
           intensity={2}
           style={{
              transform: [{
-              translateX: -1000
+              translateZ: -5
           }]
           }}
+          distance={2}
+          decay={2}
         />
         <Sphere
         lit
