@@ -10,7 +10,17 @@ export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}/>        
+        <Pano
+         source={asset('photo.jpg')}
+         style={{
+           transform: [{
+             rotateY: -20
+           }]
+         }}
+         onLoad={() => {
+          console.log('Loaded');
+         }}
+         />        
       </View>
     );
   }
