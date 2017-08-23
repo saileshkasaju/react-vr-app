@@ -17,13 +17,48 @@ export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <Plane
-        wireframe
-        dimWidth={0.2}
-        dimHeight={0.4}
+        <Sphere
+        lit
         style={{
-          transform: [{ translateZ: -2 }]
+          color: 'yellow',
+          transform: [
+            { translate: [-1.15, 0, -4] }
+          ]
         }}
+        widthSegments={20}
+        heightSegments={20}
+        />
+        <Box
+        lit
+        style={{
+          color: 'blue',
+          transform: [
+            { translate: [0, 0, -6] }
+          ]
+        }}
+        />
+        <Cylinder
+        lit
+        style={{
+          color: 'red',
+          transform: [
+            { translate: [1.5, 0, -4] }
+          ]
+        }}
+        radiusTop={0}
+        segments={20}
+        />
+        <Plane
+        lit
+        style={{
+          color: 'green',
+          transform: [
+            { translate: [0, -0.5, -5] },
+            { rotateX: -90 }
+          ]
+        }}
+        dimWidth={4}
+        dimHeight={4}
         />
         <PointLight
           intensity={1}
