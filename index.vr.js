@@ -17,11 +17,12 @@ export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <Box
+        <Cylinder
         wireframe
-        dimWidth={0.5}
+        segments={4}
         dimHeight={0.5}
-        dimDepth={0.5}
+        radiusBottom={0.35}
+        radiusTop={0}
         style={{
           transform: [{ translateZ: -2 }]
         }}
