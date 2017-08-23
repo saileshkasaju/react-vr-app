@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   AppRegistry,
-  // asset,
   Pano,
+  asset,
   View,
 } from 'react-vr';
 
@@ -10,7 +10,7 @@ export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={{ uri: '../static_assets/chess-world.jpg' }}/>        
+        <Pano source={asset('chess-world.jpg')}/>        
       </View>
     );
   }
