@@ -5,88 +5,33 @@ import {
   asset,
   View,
   Text,
-  Image
+  Image,
+  PointLight,
+  Sphere,
+  Box,
+  Cylinder,
+  Plane
 } from 'react-vr';
 
 export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <Pano
-         source={
-           asset('chess-world.jpg')
-         }
-        />
-        <View
-         style={{
-           width: 2,
-           height: 2.4,
-           backgroundColor: 'white',
-           layoutOrigin: [0.5, 0.5],
-           transform: [{ translate: [0, 0, -3] }],
-           justifyContent: 'space-between'
-         }}
-        >
-         <Image
-          source={
-           asset('left.png')
-         }
-         style={{
-           height: 1.2
-         }}
-        />
-        <Text 
-         style={{
-           color: '#333',
-           fontSize: 0.16,
-           textAlign: 'center'
-         }}
-        >
-          Explore yourself
-        </Text>
-        <View
+        <Sphere
         style={{
-          flexDirection: 'row'
+          transform: [{ translateZ: -2 }]
         }}
-        >
-         <Image
-          source={
-           asset('down.png')
-         }
-         style={{
-           width: 0.5,
-           height: 0.5
-         }}
+        wireframe
+        heightSegments={20}
+        widthSegments={20}
+        radius={2}
         />
-        <Image
-          source={
-           asset('up.png')
-         }
-         style={{
-           width: 0.5,
-           height: 0.5
-         }}
+        <PointLight
+          intensity={1}
+          style={{
+            transform: [{ translate: [0, 700, 700] }]
+          }}
         />
-        <Image
-          source={
-           asset('back.jpg')
-         }
-         style={{
-           width: 0.5,
-           height: 0.5
-         }}
-        />
-        <Image
-          source={
-           asset('scene.png')
-         }
-         style={{
-           width: 0.5,
-           height: 0.5
-         }}
-        />
-        </View>
-        </View>
       </View>
     );
   }
