@@ -17,16 +17,14 @@ export default class react_vr_app extends React.Component {
   render() {
     return (
       <View>
-        <Sphere
+        <Box
+        wireframe
+        dimWidth={0.5}
+        dimHeight={0.5}
+        dimDepth={0.5}
         style={{
-          color: 'lightblue',
           transform: [{ translateZ: -2 }]
         }}
-        lit
-        texture={asset('earth.jpg')}
-        heightSegments={20}
-        widthSegments={20}
-        radius={0.6}
         />
         <PointLight
           intensity={1}
