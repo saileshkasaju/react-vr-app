@@ -4,7 +4,8 @@ import {
   Pano,
   asset,
   View,
-  Text
+  Text,
+  Image
 } from 'react-vr';
 
 export default class react_vr_app extends React.Component {
@@ -16,24 +17,76 @@ export default class react_vr_app extends React.Component {
            asset('chess-world.jpg')
          }
         />
-        <Text
+        <View
+         style={{
+           width: 2,
+           height: 2.4,
+           backgroundColor: 'white',
+           layoutOrigin: [0.5, 0.5],
+           transform: [{ translate: [0, 0, -3] }],
+           justifyContent: 'space-between'
+         }}
+        >
+         <Image
+          source={
+           asset('left.png')
+         }
+         style={{
+           height: 1.2
+         }}
+        />
+        <Text 
+         style={{
+           color: '#333',
+           fontSize: 0.16,
+           textAlign: 'center'
+         }}
+        >
+          Explore yourself
+        </Text>
+        <View
         style={{
-          transform: [{
-            translateZ: -1
-          }],
-          color: 'lightblue',
-          backgroundColor: '#335',
-          fontSize: 0.1,
-          fontWeight: 300,
-          width: 0.45,
-          height: 0.45,
-          textAlign: 'center',
-          textAlignVertical: 'center',
-          layoutOrigin: [0.5, 0.5]
+          flexDirection: 'row'
         }}
         >
-          Hello VR
-        </Text>
+         <Image
+          source={
+           asset('down.png')
+         }
+         style={{
+           width: 0.5,
+           height: 0.5
+         }}
+        />
+        <Image
+          source={
+           asset('up.png')
+         }
+         style={{
+           width: 0.5,
+           height: 0.5
+         }}
+        />
+        <Image
+          source={
+           asset('back.jpg')
+         }
+         style={{
+           width: 0.5,
+           height: 0.5
+         }}
+        />
+        <Image
+          source={
+           asset('scene.png')
+         }
+         style={{
+           width: 0.5,
+           height: 0.5
+         }}
+        />
+        </View>
+        </View>
       </View>
     );
   }
